@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Yakinjaya Group | Company Profile</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="res/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="res/icons/bootstrap-icons.css">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .mbr-footer,
+        .mbr-header {
+            height: 60px;
+        }
+
+        .mbr-description h4 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .mbr-description img {
+            height: 220px;
+        }
+
+        .mbr-skill-dark {
+            border-color: #212529;
+            border: 3px solid;
+            border-left: 12px solid;
+        }
+
+        .mbr-hover:hover{
+            background-color: white;
+            color:black;
+        }
+
+        .mbr-jumbotron{
+            background-color: rgba(0,0,0,0.7) !important;
+            background-blend-mode: darken;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="px-3 py-2 bg-dark text-white">
+              <div class="container">
+                <div class="row row-cols-2 row-cols-sm-2">
+                    <div class="col fs-3" style="font-weight: bold;">
+                        YAKINJAYA GROUP
+                    </div>
+                    <div class="col row row-cols-3">
+                        <a href="#" onclick="load_home()" class="col btn btn-dark mbr-hover"><i class="bi bi-house"></i> Home</a>
+                        <a href="#" onclick="load()" class="col btn btn-dark mbr-hover"><i class="bi bi-person-badge"></i> Personnels</a>
+                        <a href="#" class="col btn btn-dark mbr-hover"><i class="bi bi-card-heading"></i> Works</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </header>
+        
+        <div class="container py-4">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-sm-1" id="personnel-container">
+                
+            </div>
+        </div>
+    </main>
+</body>
+<script src="res/js/jquery-3.6.0.min.js"></script>
+<script src="res/js/bootstrap.min.js"></script>
+<script src="res/data/personnel.js"></script>
+<script>
+    load_home();
+
+    function load() {
+        hide_profile();
+        var delay = 400;
+        $('#personnel-container').html('');
+        $.each(personnels, function (i, item) {
+        $('#personnel-container').append(`
+                <div class="col p-4" id="card-` + i + `">
+                    <div class="row shadow">
+                    <div class="mbr-header col-12 p-2 bg-dark text-white rounded-top">
+                        <h3>` + item.name + `</h3>
+                    </div>
+                    <div class="mbr-description col-12 p-2 row">
+                        <img src="` + item.image + `" class="img-fluid col-auto mbr-thumbnail" alt="">
+                        <div class="col row row-cols-1" style="padding-right:0;">
+                        ` + generate_skillbox(item.spacializations, 3) + `
+                        </div>
+                    </div>
+                    <div class="mbr-footer col-12 p-2 bg-secondary text-white rounded-bottom">
+                        <div class="row w-100" style="margin-left:0;">
+                        ` + generate_button(item.links) + `
+                        <a href="#" class="col p-1"><button class="btn w-100 btn-dark" onClick='load_profile(` + i + `)'><i class="bi bi-person"></i> Profile</button></a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            `);
+            $("#card-" + i).hide();
+            $("#card-" + i).fadeToggle(delay);
+        });
+    }
+
+    function load_home(){
+        hide_profile();
+        var delay = 400;
+        $('#personnel-container').html('');
+        $('#personnel-container').append(`
+                <div class="col-12 p-5 mb-4 bg-light rounded-3 mbr-jumbotron text-white shadow-lg" style="background-image:url('res/images/display/dsc.jpeg')">
+                    <div class="container-fluid py-5 text-end">
+                        <h1 class="display-5 fw-bold">YAKINJAYA GROUP</h1>
+                        <p class="fs-4">Solution to everything</p>
+                    </div>
+                </div>
+                <div class="col-12 p-5 mb-4 bg-light rounded-3 mbr-jumbotron text-white shadow-lg" style="background-image:url('res/images/display/10k.jpg')">
+                    <div class="container-fluid py-5 align-righ">
+                        <h1 class="display-5 fw-bold">Software & Hardware</h1>
+                        <p class="col-md-8 fs-4">Web Development, Hardware Configuration, System Maintenance, IoT Systems</p>
+                    </div>
+                </div>
+                <div class="col-12 p-5 mb-4 bg-light rounded-3 mbr-jumbotron text-white shadow-lg" style="background-image:url('res/images/display/500kV_3-Phase_Transmission_Lines.png')">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">Electrical Systems</h1>
+                        <p class="col-md-8 fs-4">Installations, Maintenenace, Control</p>
+                    </div>
+                </div>
+        `);
+        $(".mbr-jumbotron").hide();
+        $(".mbr-jumbotron").fadeToggle(delay);
+    }
+
+    function load_profile(index) {
+        hide();
+        item = personnels[index];
+        var delay = 700;
+        $('#personnel-container').html('');
+        $('#personnel-container').append(`
+        <div class="col-12 shadow py-2" id='personal-profile'>
+            <div class="row">
+                <div class="col-auto p-3">
+                    <img src="` + item.image + `" class="img-fluid col-4" style="width: 240px;" alt="">
+                </div>
+                <div class="col mbr-profile-description p-3">
+                <h1>` + item.name + `</h1>
+                <hr>
+                <div class="col row row-cols-3" style="padding-right:0;">
+                ` + generate_skillbox(item.spacializations, 100) + `
+                </div>
+                <hr>
+                    <div class="row w-100" style="margin-left:0;">
+                        ` + generate_button(item.links) + `
+                    </div>
+                </div>
+                <div class="col-12">
+                <h3>Experiences</h3>
+                <table class="table">
+                    <tr>
+                    <th>Type</th>
+                    <th>Section</th>
+                    <th>Location</th>
+                    <th>Year</th>
+                    </tr>
+                    ` + generate_experience_table(item.experiences) + `
+                </table>
+                <h3>Certificates</h3>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-xl-2">
+                    <div class="col">
+                    ` + generate_certificates(item.certificates.slice(0, Math.floor(item.certificates.length / 2))) + `
+                    </div>
+                    <div class="col">
+                    ` + generate_certificates(item.certificates.slice(Math.floor(item.certificates.length / 2), item.certificates.length)) + `
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        `);
+        $("#personal-profile").hide();
+        $("#personal-profile").fadeToggle(delay);
+        scrollTop: $("#personnel-container").offset()
+
+        function generate_certificates(list) {
+            images = ''
+            $.each(list, function (i, item) {
+                images += '<img src="' + item + '" class="img-fluid py-2"><hr>';
+            });
+            return images
+        }
+
+        function generate_experience_table(contents) {
+            contents.reverse();
+            table = '';
+            $.each(contents, function (i, item) {
+                table += '<tr>';
+                table += '<td>' + item.type + '</td>';
+                table += '<td>' + item.section + '</td>';
+                table += '<td>' + item.location + '</td>';
+                table += '<td>' + item.year + '</td>';
+                table += '</tr>';
+            });
+            return table
+        }
+    }
+
+    function generate_button(links) {
+        html = ''
+        if(typeof links.github != "undefined"){
+            html += '<a class="col p-1" href="' + links.github + '"><button class="btn w-100 btn-dark"><i class="bi bi-github"></i> Github</button></a>'
+        }
+        if(typeof links.portofolio != "undefined"){
+            html += '<a class="col p-1" href="' + links.portofolio + '"><button class="btn w-100 btn-dark"><i class="bi bi-file-earmark-richtext"></i> Portofolio</button></a>'
+        }
+        return html
+    }
+
+    function generate_skillbox(list, max) {
+        html = ''
+        $.each(list.slice(0, max), function (i, item) {
+            html += '<div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2">' + item + '</div></div> '
+        });
+        return html
+    }
+
+    function hide_profile() {
+        $("#personal-profile").fadeOut(400);
+    }
+
+    function hide() {
+        hide_profile();
+        var delay = 0;
+        $.each(personnels, function (i, item) {
+            console.log(i)
+            if (i % 3 == 0) {
+                delay += 300;
+            }
+            $("#card-" + i).fadeToggle(delay);
+        });
+    }
+</script>
+
+</html>

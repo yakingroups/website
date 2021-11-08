@@ -1,0 +1,125 @@
+.about-buttons .col button{
+    width: 100%;
+}
+
+.card-footer{
+    border-top: 1px solid #0dcaf0;
+}
+
+.card{
+    border: 1px solid #0dcaf0 !important;
+    border-radius: 0 !important;
+}
+
+.card-body{
+    min-height: 128px;
+}
+
+.card-content{
+    margin-top: 0px !important;
+}
+
+.toolbar{
+    border-bottom: 1px solid #0dcaf0;
+    
+    margin-bottom: 20px;
+}
+.toolbar .col{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.toolbar-center{
+    border-left: 1px solid #0dcaf0;
+    border-right: 1px solid #0dcaf0;
+}
+
+.border-all{
+    border: 1px solid #0dcaf0;
+}
+
+.border-cus-bottom{
+    border-bottom: 1px solid #0dcaf0;
+}
+
+.input-group-text, .form-control{
+    border-radius: 0 !important;
+    background-color: transparent;
+    color:white;
+}
+
+.album{
+    padding-top: 0 !important;
+}
+
+.bg-transparent{
+    background-color: transparent !important;
+}
+.btn-outline-light:hover{
+    background-color:rgb(26, 27, 28);
+    color: #0dcaf0;
+}
+.btn-outline-light{
+    border-radius: 0;
+}
+main{
+    background-color: rgb(56,57,58);
+    
+}
+.album{
+    min-height: 100vh;
+}
+main .lead{
+    color: #0dcaf0 !important;
+}
+
+.bigtext{
+    background-color: rgba(0,0,0, 0.75);
+    background-blend-mode: darken;
+    background-image: url("../images/cards/tech_support.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+.card-tile .card-body{
+    width: 100%;
+    font-family: monospace;
+}
+
+.card-tile .card-bg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.card-tile .card-body h3{
+    line-height: 0.5em;
+}
+
+.card-tile .card-body h5{
+    line-height: 0.5em;
+}
+
+.card-tile .card-body hr, hr{
+    opacity: 100%;
+    background-color: #0dcaf0;
+}
+
+.bg-dark{
+    background-color: rgb(26, 27, 28) !important;
+}
+
+.text-danger{
+    color: red !important;
+}
+.text-success{
+    color: limegreen !important;
+}
+.text-warning{
+    color: yellow !important;
+}
