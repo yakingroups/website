@@ -86,7 +86,7 @@ personnels = {
             "phone": "089696979863"
         },
         "certificates": [
-            "res/images/certificates/drf/1.png"
+            ""
         ]
     },
     3:{
