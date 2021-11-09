@@ -35,7 +35,7 @@ personnels = {
     },
     1:{
         "name": "Dany Razzaq Farino",
-        "image": "res/images/personnels/bottom.jpg",
+        "image": "res/images/personnels/drf.jpg",
         "spacializations": ["Web Programming", "Desktop Programming", "Python", "Tensorflow"],
         "experiences":[
             {

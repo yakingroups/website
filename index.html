@@ -86,17 +86,17 @@
                         <div class="col row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-xl-4 m-0 my-2">
                             <a href="#" onclick="load_home()" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-house"></i> Home</a>
                             <a href="#" onclick="load()" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-person-badge"></i> Personnels</a>
-                            <a href="#" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-card-heading"></i> Works</a>
-                            <a href="#" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-card-heading"></i> About</a>
+                            <a href="#" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-tools"></i> Works</a>
+                            <a href="#" onclick="load_about()" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-card-heading"></i> About</a>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <div class="container py-4 ">
+        <div class="container py-3 ">
             <div class="row row-cols-1 row-cols-md-2 row-cols-sm-1 bg-white" id="personnel-container">
-
+                
             </div>
         </div>
     </main>
@@ -119,7 +119,7 @@
                         
                     </div>
                     <div class="mbr-description col-12 p-2 row  g-0">
-                        <div class="col-5 mbr-background" style="background-image:url('` + item.image + `');min-height:220px;">
+                        <div class="col-sm-12 col-md-5 col-xl-5 mbr-background" style="background-image:url('` + item.image + `');min-height:220px;">
                             
                         </div>
                         <div class="col row row-cols-1" style="padding-right:0;">
@@ -146,27 +146,71 @@
         var delay = 400;
         $('#personnel-container').html('');
         $('#personnel-container').append(`
-        <div class="col-12 mb-3  p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/dsc.jpeg')">
-            <div class="container-fluid py-5 text-end">
-                <h1 class="display-5 fw-bold">YAKINJAYA GROUP</h1>
+        <div class="col-12 mb-xl-3 mb-sm-0 p-5 text-white" style="background-color: #4730E9;">
+            <div class="container-fluid py-1 text-center">
+                <h1 class="display-4 fw-bold">YAKINJAYA GROUP</h1>
                 <p class="fs-4">Solution to everything</p>
             </div>
         </div>
-        <div class="col-12 mb-3 p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/10k.jpg')">
+        <div class="col-12 mb-xl-3 mb-sm-0 p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/web.JPG')">
             <div class="container-fluid py-5 align-righ">
-                <h1 class="display-5 fw-bold">Software & Hardware</h1>
-                <p class="fs-4">Web Development, Hardware Configuration, System Maintenance, IoT Systems</p>
+                <h1 class="display-5 fw-bold">Software</h1>
+                <p class="fs-4">Web Development, Desktop Application, Automation Scripts, Cloud Service Setup</p>
+                <button class="btn btn-lg btn-outline-light">Learn More</button>
             </div>
         </div>
-        <div class="col-12 p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/500kV_3-Phase_Transmission_Lines.png')">
+        <div class="col-12 mb-xl-3 mb-sm-0 p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/10k.jpg')">
+            <div class="container-fluid py-5 align-righ">
+                <h1 class="display-5 fw-bold">Hardware</h1>
+                <p class="fs-4">PC Build, Server Setup, Maintenance & Service</p>
+                <button class="btn btn-lg btn-outline-light">Learn More</button>
+            </div>
+        </div>
+        <div class="col-12 mb-xl-3 mb-sm-0 p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/500kV_3-Phase_Transmission_Lines.png')">
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">Electrical Systems</h1>
                 <p class="fs-4">Installations, Maintenenace, Control</p>
+                <button class="btn btn-lg btn-outline-light">Learn More</button>
             </div>
         </div>
         `);
         $(".mbr-jumbotron").hide();
         $(".mbr-jumbotron").fadeToggle(delay);
+    }
+
+    function load_about() {
+        hide_profile();
+        var delay = 400;
+        $('#personnel-container').html('');
+        $('#personnel-container').append(`
+        <div class="col-12 mb-xl-3 mb-sm-0" id="mbr-about">
+            <div class="col-12 p-3 text-center text-white" style="background-color: #4730E9;">
+                <h1 class="display-4 fw-bold">YAKINJAYA GROUP</h1>
+            </div>
+            <div class="col-12 p-3">
+                <p class="fs-4">
+                    \\DESCRIPTION
+                </p>
+                <p class="fs-4">
+                    \\ADDRESS
+                </p>
+                <p class="fs-4">
+                    cvmurbaut@protonmail.com
+                </p>
+                <hr>
+                <div class="col row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-2" style="padding-right:0;">
+                    <div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-person-badge"></i> John : 058478946546</div></div>
+                    <div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-person-badge"></i> Joe : 058478946546</div></div>
+                    <div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-person-badge"></i> Michael : 058478946546</div></div>
+                </div>
+            </div>
+            <div class="col-12 p-3 bg-dark text-white">
+                <span class="fs-5">Maintained by Development Team</span>
+            </div>
+        </div>
+        `);
+        $("#mbr-about").hide();
+        $("#mbr-about").fadeToggle(delay);
     }
 
     function load_profile(index) {
@@ -177,9 +221,9 @@
         $('#personnel-container').append(`
         <div class="col-12 shadow py-2" id='personal-profile'>
             <div class="row">
-                <div class="col-auto p-3 row justify-content-center m-0">
-                    <div class="col-6">
-                        <img src="` + item.image + `" class="img-thumbnail" alt="">
+                <div class="col-auto col-xl-4 p-3 row justify-content-center m-0">
+                    <div class="col-8">
+                        <img src="` + item.image + `" class="img-fluid" alt="">
                     </div>
                 </div>
                 <div class="col mbr-profile-description p-3">
@@ -187,7 +231,10 @@
                     <hr>
                     <div class="col row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-xl-3" style="padding-right:0;">
                         ` + generate_profile_button(item.links) + `
-                    ` + generate_skillbox(item.spacializations, 100) + `
+                        ` + generate_skillbox(item.spacializations, 100) + `
+                    </div>
+                    <div class="col row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-2" style="padding-right:0;">
+                        ` + generate_contact(item.contact) + `
                     </div>
                 </div>
                 <div class="col-12">
@@ -256,6 +303,17 @@
         }
         if (typeof links.portofolio != "undefined") {
             html += '<div class="col p-2 fs-5"><a target="_blank" href="' + links.portofolio + '"><div class="w-100 h-100 mbr-skill-dark text-white bg-primary p-2 border-dark"><i class="bi bi-file-earmark"></i> Portofolio</div></a></div> '
+        }
+        return html
+    }
+
+    function generate_contact(contact){
+        html = ''
+        if (typeof contact.email != "undefined") {
+            html += '<div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-envelope"></i> ' + contact.email + '</div></div> '
+        }
+        if (typeof contact.phone != "undefined") {
+            html += '<div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-phone"></i> ' + contact.phone + '</div></div> '
         }
         return html
     }
