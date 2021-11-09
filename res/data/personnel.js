@@ -118,7 +118,7 @@ personnels = {
     }
     ,
     4:{
-        "name": "Prishandy Hamani Amrulloh",
+        "name": "Prishandy Hamani A.",
         "image": "res/images/personnels/pma.jpeg",
         "spacializations": ["Electrical Systems", "Microcontroller", "Robotics", "IoT Systems"],
         "experiences":[
@@ -142,5 +142,62 @@ personnels = {
         "certificates": [
             "res/images/certificates/pma/fpcPA-1103181031-Prishandy Hamami Amrulloh - 031_Prishandy Hamami.jpg", "res/images/certificates/pma/Sertifikat Peserta - 031_Prishandy Hamami.jpg", "res/images/certificates/pma/Sertifikat_UKK_Belakang - 031_Prishandy Hamami.jpg", "res/images/certificates/pma/IMG_0803 - 031_Prishandy Hamami.JPG", "res/images/certificates/pma/LKS Kabupaten - 031_Prishandy Hamami.jpg", "res/images/certificates/pma/Prishandy Hamami Amrulloh (juara 2 regional) - 031_Prishandy Hamami.jpg", "res/images/certificates/pma/Prishandy Hamami Amrulloh (juara 1 nasional) - 031_Prishandy Hamami.jpg", "res/images/certificates/pma/Prishandy Hamami Amrulloh (design terbaik regional) - 031_Prishandy Hamami.jpg", "res/images/certificates/pma/Sertifikat_UKK - 031_Prishandy Hamami.jpg", "res/images/certificates/pma/Prishandy Hamami Amrulloh (design terbaik nasional) - 031_Prishandy Hamami.jpg"
         ]
+    }
+    ,
+    5:{
+        "name": "Didi Alfandi",
+        "image": "res/images/personnels/da.jpeg",
+        "spacializations": ["Embedded Systems", "Hardware", "Robotics"],
+        "experiences":[
+            {
+                "type": "Competition",
+                "section": "Robotics",
+                "location": "PENS Divisi KRSBI-Beroda",
+                "year": 2021
+            },
+            {
+                "type": "Competition",
+                "section": "Industrial Control",
+                "location": "Workshop Roof-inno Surabaya",
+                "year": 2017
+            },
+            {
+                "type": "Competition",
+                "section": "Robotics",
+                "location": "PT. Lentera Bumi Nusantara",
+                "year": 2020
+            }
+        ],
+        "links":{
+            "github": "https://github.com/dialfandi"
+        },
+        "contact": {
+            "email": "dialfandi25@gmail.com",
+            "phone": "085649070531"
+        },
+        "certificates": [
+            "res/images/certificates/da/1.jpg","res/images/certificates/da/2.jpg","res/images/certificates/da/3.jpg"
+        ]
+    }
+    ,
+    6:{
+        "name": "Alif Dhyo S.A.",
+        "image": "res/images/personnels/ad.jpeg",
+        "spacializations": ["Architectural Design", "Interior Design", "Exterior Design", "Landscape Design"],
+        "experiences":[
+            {
+                "type": "Competition",
+                "section": "Robotics",
+                "location": "CV. JEEM CONSULTAN",
+                "year": 2017
+            }
+        ],
+        "links":{
+        },
+        "contact": {
+            "email": "alfdbm.99@gmail.com",
+            "phone": "087758533671"
+        },
+        "certificates": [""]
     }
 }

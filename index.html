@@ -166,10 +166,24 @@
                 <button class="btn btn-lg btn-outline-light">Learn More</button>
             </div>
         </div>
+        <div class="col-12 mb-xl-3 mb-sm-0 p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/10k.jpg')">
+            <div class="container-fluid py-5 align-righ">
+                <h1 class="display-5 fw-bold">Microcontroller</h1>
+                <p class="fs-4">Internet of Things, Automations</p>
+                <button class="btn btn-lg btn-outline-light">Learn More</button>
+            </div>
+        </div>
         <div class="col-12 mb-xl-3 mb-sm-0 p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/500kV_3-Phase_Transmission_Lines.png')">
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">Electrical Systems</h1>
                 <p class="fs-4">Installations, Maintenenace, Control</p>
+                <button class="btn btn-lg btn-outline-light">Learn More</button>
+            </div>
+        </div>
+        <div class="col-12 mb-xl-3 mb-sm-0 p-5 bg-light mbr-jumbotron text-white" style="background-image:url('res/images/display/500kV_3-Phase_Transmission_Lines.png')">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Architecture</h1>
+                <p class="fs-4">Interior Design, Exterior Design, Landscape Design</p>
                 <button class="btn btn-lg btn-outline-light">Learn More</button>
             </div>
         </div>
@@ -321,7 +335,7 @@
     function generate_skillbox(list, max) {
         html = ''
         $.each(list.slice(0, max), function (i, item) {
-            html += '<div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2">' + item + '</div></div> '
+            html += '<div class="col p-2 fs-5 "><div class="w-100 h-100 mbr-skill-dark p-2">' + item + '</div></div> '
         });
         return html
     }
