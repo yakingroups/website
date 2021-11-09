@@ -187,7 +187,7 @@ personnels = {
         "experiences":[
             {
                 "type": "Competition",
-                "section": "Robotics",
+                "section": "Architecture",
                 "location": "CV. JEEM CONSULTAN",
                 "year": 2017
             }
