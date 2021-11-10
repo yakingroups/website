@@ -35,7 +35,7 @@ personnels = {
     },
     1:{
         "name": "Dany Razzaq Farino",
-        "image": "res/images/personnels/bottom.jpg",
+        "image": "res/images/personnels/drf.jpeg",
         "spacializations": ["Web Programming", "Desktop Programming", "Python", "Tensorflow"],
         "experiences":[
             {
@@ -64,7 +64,7 @@ personnels = {
     },
     2:{
         "name": "Ahmad Nasrudin",
-        "image": "res/images/personnels/drf.jpg",
+        "image": "res/images/personnels/an.jpeg",
         "spacializations": ["PLC Systems", "Mechanical Systems", "Graphic Design"],
         "experiences":[
             {
