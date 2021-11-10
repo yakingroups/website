@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Yakinjaya Group | Company Profile</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="res/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="res/icons/bootstrap-icons.css">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .mbr-footer,
+        .mbr-header {
+            height: 60px;
+        }
+
+        .mbr-description h4 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .mbr-description img {
+            max-height: 220px;
+        }
+
+        .mbr-skill-dark {
+            border-color: #212529;
+            border: 3px solid;
+            border-left: 12px solid;
+        }
+
+        .mbr-hover:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .mbr-jumbotron {
+            background-color: rgba(0, 0, 0, 0.7) !important;
+            background-blend-mode: darken;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .mbr-top {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+
+        .mbr-background {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #212529;
+        }
+
+        a:hover {
+            color: #212529;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <header class=" sticky-top">
+        <div class="bg-dark text-white">
+            <div class="container">
+                <div class="row row-cols-1">
+                    <div class="col row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-xl-4 m-0 my-2">
+                        <a href="#" onclick="load_home()" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-house"></i> Home</a>
+                        <a href="#" onclick="load()" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-person-badge"></i> Personnels</a>
+                        <a href="#" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-tools"></i> Services</a>
+                        <a href="#" onclick="load_about()" class="col btn btn-dark mbr-hover fs-5"><i class="bi bi-card-heading"></i> About</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid p-0" id="home">
+            
+        </div>
+
+        <div class="container py-3">
+            <div class="row row-cols-1 row-cols-md-3 row-cols-sm-1" id="personnel-container">
+
+            </div>
+        </div>
+    </main>
+    <footer class="container-fluid bg-dark text-white">
+        <div class="container p-3">
+            <h3>© Yakinjaya Group 2021</h3>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <table class="table text-white">
+                        <tr>
+                            <td>Email</td>
+                            <td>cvmurbaut@protonmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Whatsapp</td>
+                            <td>To be filled</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-12 col-md-6 fs-5">
+                    Jawa Timur, Kab. Ponorogo, Kec. Jenangan, Desa Panjeng
+                    <br>JL. Randu Mas No.24
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="res/js/jquery-3.6.0.min.js"></script>
+<script src="res/js/bootstrap.min.js"></script>
+<script src="res/data/personnel.js"></script>
+<script>
+    load_home();
+
+    function load() {
+        hide_profile();
+        hide_home();
+        var delay = 400;
+        $('#personnel-container').html('');
+        $.each(personnels, function (i, item) {
+            $('#personnel-container').append(`
+                <div class="col p-4" id="card-` + i + `">
+                    <div class="mbr-description col-12 row g-0">
+                        <div class="col-12 mbr-background" style="background-image:url('` + item.image + `');min-height:320px;">
+                        </div>
+                        <div class="col bg-dark text-white p-3 text-center" style="padding-right:0;">
+                            <h3>` + item.name + `</h3>
+                            <hr class="my-2">
+                            <div class="row  row-cols-sm-1 row-cols-1 row-cols-md-2 g-2">
+                                ` + generate_skillbox(item.spacializations, 4) + `
+                            </div>
+                            <hr class="my-2">
+                            <button class="btn w-100 btn-outline-primary text-white rounded-0" onclick="load_profile(` + i + `)">Profile</button>
+                        </div>
+                    </div>
+                </div>
+            `);
+            
+            $("#card-" + i).hide();
+            $("#card-" + i).fadeToggle(delay);
+        });
+    }
+
+    function load_home() {
+        hide();
+        hide_profile();
+        var delay = 400;
+        $('#home').html('');
+        $('#home').append(`
+            <div class="container-fluid p-5 text-white mbr-jumbotron" style="background-image:url('res/images/display/cada.jpg')">
+                <div class="container-fluid text-center" style="padding:150px 0;">
+                    <h1 class="display-4 fw-bold">YAKINJAYA GROUP</h1>
+                    <p class="fs-4">Solution to everything</p>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="container bg-dark">
+
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+                    <div class="col mb-xl-3 p-2">
+                        <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/web.JPG')">
+                            <h1 class="display-5 fw-bold">Software</h1>
+                            <p class="fs-4">Web Development, Desktop Application, Cloud Service Setup</p>
+                            <button class="btn btn-lg btn-outline-light">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="col mb-xl-3 p-2">
+                        <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/pcb.jpeg')">
+                            <h1 class="display-5 fw-bold">Hardware</h1>
+                            <p class="fs-4">PC Build, Server Setup, Maintenance & Service</p>
+                            <button class="btn btn-lg btn-outline-light">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="col mb-xl-3 p-2">
+                        <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/10k.jpg')">
+                            <h1 class="display-5 fw-bold">Microcontroller</h1>
+                            <p class="fs-4">Internet of Things, Automations</p>
+                            <button class="btn btn-lg btn-outline-light">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="col mb-xl-3 p-2">
+                        <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/control.jpg')">
+                            <h1 class="display-5 fw-bold">Electrical Systems</h1>
+                            <p class="fs-4">Installations, Maintenenace, Control</p>
+                            <button class="btn btn-lg btn-outline-light">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="col mb-xl-3 p-2">
+                        <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/arc.jpg')">
+                            <h1 class="display-5 fw-bold">Architecture</h1>
+                            <p class="fs-4">Interior Design, Exterior Design, Landscape Design</p>
+                            <button class="btn btn-lg btn-outline-light">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `);
+        $("#home").hide();
+        $("#home").fadeToggle(delay);
+    }
+
+    function load_about() {
+        hide_profile();
+        hide_home();
+        var delay = 400;
+        $('#personnel-container').html('');
+        $('#personnel-container').append(`
+        <div class="col-12 mb-xl-3 mb-sm-0" id="mbr-about">
+            <div class="col-12 p-3 text-center text-white bg-dark">
+                <h1 class="display-4 fw-bold">YAKINJAYA GROUP</h1>
+            </div>
+            <div class="col-12 p-3">
+                <p class="fs-4">
+                    JL. Randu Mas No.24 Jenangan, Panjeng, Ponorogo
+                </p>
+            </div>
+            <div class="col-12 p-3 bg-dark text-white">
+                <span class="fs-5">Maintained by Development Team</span>
+            </div>
+        </div>
+        `);
+        $("#mbr-about").hide();
+        $("#mbr-about").fadeToggle(delay);
+    }
+
+    function load_profile(index) {
+        hide();
+        hide_home();
+        item = personnels[index];
+        var delay = 400;
+        $('#personnel-container').html('');
+        $('#personnel-container').append(`
+        <div class="col-12 p-4" id="personal-profile">
+            <div class="row bg-dark p-2">
+                <div class="col-sm-12 col-md-2 p-0">
+                    <img src="` + item.image + `" class="img-fluid" style="max-width: 220px;" alt="">
+                </div>
+                <div class="col text-white p-3 py-1">
+                    <h1>` + item.name + `</h1>
+                    <hr class="my-2">
+                    <h4>Links & Contacts</h4>
+                    <div class="row">
+                        ` + generate_profile_button(item.links) + `
+                        ` + generate_contact(item.contact) + `
+                    </div>
+                    <hr class="my-2">
+                    <h4>Skills</h4>
+                    <div class="row row-cols-sm-1 row-cols-1 row-cols-md-3">
+                        ` + generate_skillbox(item.spacializations, 100) + `
+                    </div>
+                </div>
+            </div>
+            <div class="row bg-primary p-2 text-white fs-3 fw-bold">
+                Experiences
+            </div>
+            <div class="row p-2 bg-white">
+                <table class="table">
+                    <tr>
+                        <th>Type</th>
+                        <th>Location</th>
+                        <th>Year</th>
+                    </tr>
+                    ` + generate_experience_table(item.experiences) + `
+                </table>
+            </div>
+            <div class="row bg-primary p-2 text-white fs-3 fw-bold">
+                Certificates
+            </div>
+            <div class="row bg-white p-2 row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-xl-2">
+                <div class="col">
+                    ` + generate_certificates(item.certificates.slice(0, Math.floor(item.certificates.length / 2))) + `
+                </div>
+                <div class="col">
+                    ` + generate_certificates(item.certificates.slice(Math.floor(item.certificates.length / 2), item.certificates.length)) + `
+                </div>
+            </div>
+        </div>
+        `);
+        $("#personal-profile").hide();
+        $("#personal-profile").fadeToggle(delay);
+
+        function generate_certificates(list) {
+            images = ''
+            $.each(list, function (i, item) {
+                images += '<img src="' + item + '" class="img-fluid py-2">';
+            });
+            return images
+        }
+
+        function generate_experience_table(contents) {
+            contents.reverse();
+            table = '';
+            $.each(contents, function (i, item) {
+                table += '<tr>';
+                table += '<td>' + item.section + '</td>';
+                table += '<td>' + item.location + '</td>';
+                table += '<td>' + item.year + '</td>';
+                table += '</tr>';
+            });
+            return table
+        }
+    }
+
+    function generate_button(links) {
+        html = ''
+        if (typeof links.github != "undefined") {
+            html += '<a target="_blank" class="col p-1" href="' + links.github + '"><button class="btn w-100 btn-outline-light">Github</button></a>'
+        }
+        if (typeof links.portofolio != "undefined") {
+            html += '<a target="_blank" class="col p-1" href="' + links.portofolio + '"><button class="btn w-100 btn-outline-light">Portofolio</button></a>'
+        }
+        return html
+    }
+
+    function generate_profile_button(links) {
+        html = ''
+        if (typeof links.github != "undefined") {
+            html += '<div class="col-sm-12 col-md-4"><div class="border-bottom border-success border-2 p-2"><a class="link-light" target="_blank" href="' + links.github + '"><i class="bi bi-github"></i> Github</a></div></div>'
+        }
+        if (typeof links.portofolio != "undefined") {
+            html += '<div class="col-sm-12 col-md-4"><div class="border-bottom border-success border-2 p-2"><a class="link-light" target="_blank" href="' + links.portofolio + '"><i class="bi bi-file-earmark"></i> Portofolio</a></div></div>'
+        }
+        return html
+    }
+
+    function generate_contact(contact) {
+        html = ''
+        if (typeof contact.email != "undefined") {
+            html += '<div class="col-sm-12 col-md-4"><div class="border-bottom border-success border-2 p-2"><i class="bi bi-envelope"></i> ' + contact.email + '</div></div>'
+        }
+        if (typeof contact.phone != "undefined") {
+            html += '<div class="col-sm-12 col-md-4"><div class="border-bottom border-success border-2 p-2"><i class="bi bi-phone"></i> ' + contact.phone + '</div></div>'
+        }
+        return html
+    }
+
+    function generate_skillbox(list, max) {
+        html = ''
+        $.each(list.slice(0, max), function (i, item) {
+            html += '<div class="col"><div class="border-bottom border-primary border-2 p-2">' + item + '</div></div>'
+        });
+        return html
+    }
+
+    function hide_profile() {
+        $("#personal-profile").fadeOut(400);
+    }
+
+    function hide_home(){
+        $("#home").fadeOut(400);
+    }
+
+    function hide() {
+        hide_profile();
+        var delay = 0;
+        $.each(personnels, function (i, item) {
+            if (i % 3 == 0) {
+                delay += 300;
+            }
+            $("#card-" + i).fadeToggle(delay);
+        });
+    }
+</script>
+
+</html>
