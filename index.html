@@ -331,10 +331,10 @@
     function generate_contact(contact){
         html = ''
         if (typeof contact.email != "undefined") {
-            html += '<div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-envelope"></i> ' + contact.email + '</div></div> '
+            html += '<div class="col-12 p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-envelope"></i> ' + contact.email + '</div></div> '
         }
         if (typeof contact.phone != "undefined") {
-            html += '<div class="col p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-phone"></i> ' + contact.phone + '</div></div> '
+            html += '<div class="col-12 p-2 fs-5"><div class="w-100 h-100 mbr-skill-dark p-2"><i class="bi bi-phone"></i> ' + contact.phone + '</div></div> '
         }
         return html
     }

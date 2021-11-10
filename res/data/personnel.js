@@ -202,7 +202,7 @@ personnels = {
     }
     ,
     7:{
-        "name": "Achmad Fauzi Noor H.",
+        "name": "Achmad Fauzi N. H.",
         "image": "res/images/personnels/af.jpeg",
         "spacializations": ["Electrical Installation", "Electrical Control", "Electrical Maintenance", "Electrical Assembly"],
         "experiences":[
@@ -215,7 +215,7 @@ personnels = {
             {
                 "type": "Competition",
                 "section": "Electrical Assembly",
-                "location": "UD. SONIC",
+                "location": "UD. BESONIC",
                 "year": 2017
             }
         ],
