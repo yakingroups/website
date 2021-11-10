@@ -200,4 +200,31 @@ personnels = {
         },
         "certificates": [""]
     }
+    ,
+    7:{
+        "name": "Achmad Fauzi Noor H.",
+        "image": "res/images/personnels/af.jpeg",
+        "spacializations": ["Electrical Installation", "Electrical Control", "Electrical Maintenance", "Electrical Assembly"],
+        "experiences":[
+            {
+                "type": "Competition",
+                "section": "Electrical Installation",
+                "location": "PT. Duta Alam Persada",
+                "year": 2020
+            },
+            {
+                "type": "Competition",
+                "section": "Electrical Assembly",
+                "location": "UD. SONIC",
+                "year": 2017
+            }
+        ],
+        "links":{
+        },
+        "contact": {
+            "email": "achmadfauzinoorhanani@gmail.com",
+            "phone": "081332678696"
+        },
+        "certificates": ["res/images/certificates/af/1.jpeg","res/images/certificates/af/2.jpeg","res/images/certificates/af/3.jpeg"]
+    }
 }
