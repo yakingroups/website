@@ -81,6 +81,16 @@
         a:hover {
             color: #212529;
         }
+
+        .nav-pills > .nav-link{
+            background-color: #212529 !important;
+            color: white !important;
+            border-radius: 0 !important;
+        }
+        .nav-pills > .active{
+            background-color: #0275d8 !important;
+            border-radius: 0 !important;
+        }
     </style>
 </head>
 
@@ -101,7 +111,68 @@
     </header>
     <main>
         <div class="container-fluid p-0" id="home">
-            
+            <div class="container p-3">
+                <div class="row mb-3">
+                    <div class="col position-relative"><hr class="position-absolute top-50 start-50 translate-middle w-100 m-0" style="border:2px solid black !important;opacity:100%;"></div>
+                    <div class="col-auto fs-1 text-uppercase">Services</div>
+                    <div class="col position-relative"><hr class="position-absolute top-50 start-50 translate-middle w-100 m-0" style="border:2px solid black !important;opacity:100%;"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-xl-3">
+                        <div class="nav nav-pills text-white bg-dark fs-4" id="pills-tab" role="tablist">
+                            <button class="nav-link active col-12 text-start" id="nav-software-tab" data-bs-toggle="tab" data-bs-target="#nav-software" type="button" role="tab" aria-controls="nav-software" aria-selected="true">Software</button>
+                            <button class="nav-link  col-12 text-start" id="nav-hardware-tab" data-bs-toggle="tab" data-bs-target="#nav-hardware" type="button" role="tab" aria-controls="nav-hardware" aria-selected="false">Hardware</button>
+                            <button class="nav-link col-12 text-start" id="nav-micro-tab" data-bs-toggle="tab" data-bs-target="#nav-micro" type="button" role="tab" aria-controls="nav-micro" aria-selected="false">Microcontroller</button>
+                            <button class="nav-link col-12 text-start" id="nav-elec-tab" data-bs-toggle="tab" data-bs-target="#nav-elec" type="button" role="tab" aria-controls="nav-elec" aria-selected="false">Electrical</button>
+                            <button class="nav-link col-12 text-start" id="nav-architecture-tab" data-bs-toggle="tab" data-bs-target="#nav-architecture" type="button" role="tab" aria-controls="nav-architecture" aria-selected="false">Architecture</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-9">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="nav-software" role="tabpanel" aria-labelledby="nav-software-tab">
+                                <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/web.JPG')">
+                                    <h1 class="display-5 fw-bold">Software</h1>
+                                    <p class="fs-4">Web Development, Desktop Application, Cloud Service Setup</p>
+                                    <button class="btn btn-lg btn-outline-light">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-hardware" role="tabpanel" aria-labelledby="nav-hardware-tab">
+                                <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/pcb.jpeg')">
+                                    <h1 class="display-5 fw-bold">Hardware</h1>
+                                    <p class="fs-4">PC Build, Server Setup, Maintenance & Service</p>
+                                    <button class="btn btn-lg btn-outline-light">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-micro" role="tabpanel" aria-labelledby="nav-micro-tab">
+                                <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/10k.jpg')">
+                                    <h1 class="display-5 fw-bold">Microcontroller</h1>
+                                    <p class="fs-4">Internet of Things, Automations</p>
+                                    <button class="btn btn-lg btn-outline-light">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-elec" role="tabpanel" aria-labelledby="nav-elec-tab">
+                                <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/control.jpg')">
+                                    <h1 class="display-5 fw-bold">Electrical Systems</h1>
+                                    <p class="fs-4">Installations, Maintenenace, Control</p>
+                                    <button class="btn btn-lg btn-outline-light">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-architecture" role="tabpanel" aria-labelledby="nav-architecture-tab">
+                                <div class="container-fluid py-5 mbr-jumbotron text-white" style="background-image:url('res/images/display/arc.jpg')">
+                                    <h1 class="display-5 fw-bold">Architecture</h1>
+                                    <p class="fs-4">Interior Design, Exterior Design, Landscape Design</p>
+                                    <button class="btn btn-lg btn-outline-light">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col position-relative"><hr class="position-absolute top-50 start-50 translate-middle w-100 m-0" style="border:2px solid black !important;opacity:100%;"></div>
+                    <div class="col-auto fs-1 text-uppercase">Partners</div>
+                    <div class="col position-relative"><hr class="position-absolute top-50 start-50 translate-middle w-100 m-0" style="border:2px solid black !important;opacity:100%;"></div>
+                </div>
+            </div>
         </div>
 
         <div class="container py-3">
@@ -139,7 +210,7 @@
 <script src="res/js/bootstrap.min.js"></script>
 <script src="res/data/personnel.js"></script>
 <script>
-    load_home();
+    //load_home();
 
     function load() {
         hide_profile();
@@ -164,7 +235,7 @@
                     </div>
                 </div>
             `);
-            
+
             $("#card-" + i).hide();
             $("#card-" + i).fadeToggle(delay);
         });
@@ -378,7 +449,7 @@
         $("#personal-profile").fadeOut(400);
     }
 
-    function hide_home(){
+    function hide_home() {
         $("#home").fadeOut(400);
     }
 
