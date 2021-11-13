@@ -44,7 +44,7 @@
     },
     {
         "name": "Dany Razzaq Farino",
-        "image": "res/images/personnels/drf.jpg",
+        "image": "res/images/personnels/bottom.jpg",
         "spacializations": [
             "Web Programming",
             "Desktop Programming",
@@ -145,7 +145,7 @@
         ]
     },
     {
-        "name": "Prishandy Hamani Amrulloh",
+        "name": "Prishandy Hamani A.",
         "image": "res/images/personnels/pma.jpeg",
         "spacializations": [
             "Electrical Systems",
@@ -182,6 +182,107 @@
             "res/images/certificates/pma/Prishandy Hamami Amrulloh (design terbaik regional) - 031_Prishandy Hamami.jpg",
             "res/images/certificates/pma/Sertifikat_UKK - 031_Prishandy Hamami.jpg",
             "res/images/certificates/pma/Prishandy Hamami Amrulloh (design terbaik nasional) - 031_Prishandy Hamami.jpg"
+        ]
+    },
+    {
+        "name": "Didi Alfandi",
+        "image": "res/images/personnels/da.jpeg",
+        "spacializations": [
+            "Embedded Systems",
+            "Hardware",
+            "Robotics"
+        ],
+        "experiences": [
+            {
+                "type": "Competition",
+                "section": "Robotics",
+                "location": "PENS Divisi KRSBI-Beroda",
+                "year": 2021
+            },
+            {
+                "type": "Competition",
+                "section": "Industrial Control",
+                "location": "Workshop Roof-inno Surabaya",
+                "year": 2017
+            },
+            {
+                "type": "Competition",
+                "section": "Robotics",
+                "location": "PT. Lentera Bumi Nusantara",
+                "year": 2020
+            }
+        ],
+        "links": {
+            "github": "https://github.com/dialfandi"
+        },
+        "contact": {
+            "email": "dialfandi25@gmail.com",
+            "phone": "085649070531"
+        },
+        "certificates": [
+            "res/images/certificates/da/1.jpg",
+            "res/images/certificates/da/2.jpg",
+            "res/images/certificates/da/3.jpg"
+        ]
+    },
+    {
+        "name": "Alif Dhyo S.A.",
+        "image": "res/images/personnels/ad.jpeg",
+        "spacializations": [
+            "Architectural Design",
+            "Interior Design",
+            "Exterior Design",
+            "Landscape Design"
+        ],
+        "experiences": [
+            {
+                "type": "Competition",
+                "section": "Architecture",
+                "location": "CV. JEEM CONSULTAN",
+                "year": 2017
+            }
+        ],
+        "links": {},
+        "contact": {
+            "email": "alfdbm.99@gmail.com",
+            "phone": "087758533671"
+        },
+        "certificates": [
+            ""
+        ]
+    },
+    {
+        "name": "Achmad Fauzi N. H.",
+        "image": "res/images/personnels/af.jpeg",
+        "spacializations": [
+            "Electrical Installation",
+            "Electrical Control",
+            "Electrical Maintenance",
+            "Electrical Assembly"
+        ],
+        "experiences": [
+            {
+                "type": "Competition",
+                "section": "Electrical Installation",
+                "location": "PT. Duta Alam Persada",
+                "year": 2020
+            },
+            {
+                "type": "Competition",
+                "section": "Electrical Assembly",
+                "location": "UD. BESONIC",
+                "year": 2017
+            }
+        ],
+        "links": {},
+        "contact": {
+            "email": "achmadfauzinoorhanani@gmail.com",
+            "phone": "081332678696"
+        },
+        "certificates": [
+            "res/images/certificates/af/1.jpeg",
+            "res/images/certificates/af/2.jpeg",
+            "res/images/certificates/af/3.jpeg"
         ]
     }
 ]

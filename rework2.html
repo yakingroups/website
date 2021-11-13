@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- https://wptf.themepul.com/restly/onepage-2/ copy -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,12 +12,23 @@
     <style>
         .mbr-banner {
             background-color: rgba(0, 0, 0, 0.7) !important;
-            background-image: url('res/images/display/control.jpg');
+            background-image: url('res/images/display/cada.jpg');
             background-blend-mode: darken;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             transition: background-image 0.3s ease-in-out;
+        }
+
+        .mbr-skill {
+            background-color: rgba(0, 0, 0, 0.7) !important;
+            color: white;
+        }
+
+        .mbr-profile {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .mbr-bg-blue {
@@ -27,7 +39,7 @@
             background-color: #104CBA !important;
         }
 
-        .mbr-text-bright-blue{
+        .mbr-text-bright-blue {
             color: #104CBA !important;
         }
 
@@ -50,21 +62,27 @@
             border-right: 1px solid white;
         }
 
-        .mbr-services span{
-            color:black;
+        .mbr-services span {
+            color: black;
         }
 
-        .mbr-services:hover{
-            transition: 0.2s;
-            cursor:pointer;
+        .mbr-services-active {
+            cursor: pointer;
             background-color: #222F5A !important;
-            color:white !important;
+            color: white !important;
         }
 
-        .mbr-services:hover> span{
+        .mbr-services:hover {
             transition: 0.2s;
-            cursor:pointer;
-            color:white !important;
+            cursor: pointer;
+            background-color: #222F5A !important;
+            color: white !important;
+        }
+
+        .mbr-services:hover>span {
+            transition: 0.2s;
+            cursor: pointer;
+            color: white !important;
         }
     </style>
 </head>
@@ -73,15 +91,14 @@
     <nav class="navbar sticky-top navbar-expand-lg mbr-navbar">
         <div class="container">
             <a class="navbar-brand text-white fw-bold fs-3 mbr-name px-3" href="#">Yakinjaya Group</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarsExample07XL">
                 <div class="row w-100 px-3">
-                    <a href="#" onclick="load_home()" class="col-sm-12 col-md-3 btn mbr-hover fs-5">Home</a>
-                    <a href="#" onclick="load()" class="col-sm-12 col-md-3 btn mbr-hover fs-5">Personnels</a>
-                    <a href="#" class="col-sm-12 col-md-3 btn mbr-hover fs-5">Services</a>
-                    <a href="#" onclick="load_about()" class="col-sm-12 col-md-3 btn mbr-hover fs-5">About</a>
+                    <a href="#mbr-banner" class="col-sm-12 col-md-4 btn mbr-hover fs-5">Services</a>
+                    <a href="#teams" class="col-sm-12 col-md-4 btn mbr-hover fs-5">Personnels</a>
+                    <a href="#" onclick="load_about()" class="col-sm-12 col-md-4 btn mbr-hover fs-5">About</a>
                 </div>
             </div>
         </div>
@@ -90,58 +107,80 @@
     <main>
         <div class="mbr-banner" id="mbr-banner">
             <div class="container mbr-banner-text text-white" style="padding: 25vh 0;">
-                <span class="fw-bold display-3" id="banner-title">Yakinjaya Group</span>
+                <span class="d-block fw-bold display-3 text-center text-md-start" id="banner-title">Yakinjaya Group</span>
                 <br>
-                <span class="display-6 my-2 d-block" id="banner-text">Solution to Everything</span>
+                <span class="display-6 my-2 d-block text-center text-md-start" id="banner-text">Solution to Everything</span>
             </div>
 
         </div>
-        <div class="container-fluid mbr-banner-text mbr-bg-bright-blue" style="padding: 9vh 0;">
-            <div class="container" style="margin-top:-18vh;">
+        <div class="container-fluid mbr-banner-text mbr-bg-bright-blue" style="padding: 6vh 0;">
+            <div class="container" style="margin-top:-15vh;">
                 <div class="row">
-                    <div class=" col-md-2 col-sm-6 p-2 text-center ">
-                        <i class="bi bg-white bi-code-slash display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" onclick="change_banner('Software')">
+                    <div class=" col-md-2 col-6 p-2 text-center ">
+                        <i class="bi bg-white bi-code-slash display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" id="src-software" onclick="change_banner('Software')">
                             <span class="fs-4 pb-2 d-block fst-normal fw-normal">
                                 Software
                             </span>
                         </i>
                     </div>
-                    <div class=" col-md-2 col-sm-6 p-2 text-center ">
-                        <i class="bi bg-white bi-pc-display display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" onclick="change_banner('Hardware')">
+                    <div class=" col-md-2 col-6 p-2 text-center ">
+                        <i class="bi bg-white bi-pc-display display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" id="src-hardware" onclick="change_banner('Hardware')">
                             <span class="fs-4 pb-2 d-block fst-normal fw-normal">
                                 Hardware
                             </span>
                         </i>
                     </div>
-                    <div class=" col-md-2 col-sm-6 p-2 text-center ">
-                        <i class="bi bg-white bi-cpu display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" onclick="change_banner('Microcontroller')">
+                    <div class=" col-md-2 col-6 p-2 text-center ">
+                        <i class="bi bg-white bi-cpu display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" id="src-microcontroller" onclick="change_banner('Microcontroller')">
                             <span class="fs-4 pb-2 d-block fst-normal fw-normal">
                                 Microcontroller
                             </span>
                         </i>
                     </div>
-                    <div class=" col-md-2 col-sm-6 p-2 text-center ">
-                        <i class="bi bg-white bi-lightning-charge display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services">
+                    <div class=" col-md-2 col-6 p-2 text-center ">
+                        <i class="bi bg-white bi-lightning-charge display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" id="src-software" onclick="change_banner('Electrical')">
                             <span class="fs-4 pb-2 d-block fst-normal fw-normal">
                                 Electrical
                             </span>
                         </i>
                     </div>
-                    <div class=" col-md-2 col-sm-6 p-2 text-center ">
-                        <i class="bi bg-white bi-brush display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services">
+                    <div class=" col-md-2 col-6 p-2 text-center ">
+                        <i class="bi bg-white bi-brush display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" id="src-software" onclick="change_banner('Design')">
                             <span class="fs-4 pb-2 d-block fst-normal fw-normal">
                                 Design
                             </span>
                         </i>
                     </div>
-                    <div class=" col-md-2 col-sm-6 p-2 text-center ">
-                        <i class="bi bg-white bi-building display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services">
+                    <div class=" col-md-2 col-6 p-2 text-center ">
+                        <i class="bi bg-white bi-building display-1 d-block py-2 mbr-text-bright-blue rounded mbr-services" id="src-software" onclick="change_banner('Architecture')">
                             <span class="fs-4 pb-2 d-block fst-normal fw-normal">
                                 Architecture
                             </span>
                         </i>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding: 3vh 0;" id="list-services">
+            <div class="container text-center">
+                <span class="display-6 my-2 d-block">Choose one of the above to display services offered by us</span>
+            </div>
+        </div>
+        <div class="container-fluid mbr-bg-bright-blue" style="padding: 3vh 0;" id="list-services">
+            <div class="container text-center">
+                <span class="display-6 my-2 d-block text-white">Meet the team</span>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding: 3vh 0;" id="teams">
+            <div class="container">
+                <div class="row" id="row-personnels">
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mbr-bg-blue" style="padding: 3vh 0;">
+            <div class="container" id="personnel-profile">
+                <span class="display-6 my-2 d-block text-white text-center">Choose a profile to view</span>
             </div>
         </div>
     </main>
@@ -172,38 +211,83 @@
 </body>
 <script src="res/js/bootstrap.min.js"></script>
 <script src="res/js/jquery-3.6.0.min.js"></script>
+<script src="res/data/personnel.js"></script>
 <script>
     var services = {
-        "Software":{
+        "Software": {
             "name": "Software",
             "descrtiption": "Web Development, Desktop Application, Cloud Services",
             "background": "url('res/images/display/web.JPG')"
         },
-        "Hardware":{
+        "Hardware": {
             "name": "Hardware",
             "descrtiption": "PC Build, Server Setup, Maintenance & Service",
             "background": "url('res/images/display/pcb.jpeg')"
         },
-        "Microcontroller":{
+        "Microcontroller": {
             "name": "Microcontroller",
             "descrtiption": "Internet of Things, Automations",
             "background": "url('res/images/display/10k.jpg')"
+        },
+        "Electrical": {
+            "name": "Electrical",
+            "descrtiption": "Description Electrical",
+            "background": "url('res/images/display/control.jpg')"
+        },
+        "Design": {
+            "name": "Design",
+            "descrtiption": "Description Design",
+            "background": "url('res/images/display/10k.jpg')"
+        },
+        "Architecture": {
+            "name": "Architecture",
+            "descrtiption": "Description Architecture",
+            "background": "url('res/images/display/arc.jpg')"
         }
-        
+
     }
 
-    function change_banner(service){
+    function change_banner(service) {
         $("#banner-title").hide();
         $("#banner-text").hide();
 
         $("#banner-title").html(services[service]['name']);
         $("#banner-text").html(services[service]['descrtiption']);
-        
+
         $("#mbr-banner").css("background-image", services[service]['background']);
 
         $("#banner-text").fadeToggle(300);
         $("#banner-title").fadeToggle(300);
-        
+        $.each(Object.keys(services), function (i, item) {
+            $("#src-" + item.toLowerCase()).removeClass("mbr-services-active");
+            $("#src-" + item.toLowerCase()).children('span').removeClass('text-white');
+        });
+        $("#src-" + service.toLowerCase()).addClass("mbr-services-active");
+        $("#src-" + service.toLowerCase()).children('span').addClass('text-white');
+
+        $("#list-services").hide();
+        $("#list-services").load("pages/services/" + service.toLowerCase() + ".html")
+        $("#list-services").fadeToggle(300);
+    }
+
+    $.each(personnels, function (i, item) {
+        $('#row-personnels').append(`
+            <div class="col-md-3 col-12 p-2 text-center">
+                <div class="d-block w-100 mbr-profile ratio ratio-16x9 rounded mb-3" style="background-image: url('` + item.image + `');">
+
+                </div>
+                <button class="w-100 mbr-services btn btn-outline-dark" onClick='load_profile(` + i + `)'>
+                    <span class="fs-4  d-block">` + item.name + `</span>
+                </button>
+            </div>
+        `);
+    });
+
+    function load_profile(index){
+        $("#personnel-profile").hide();
+        $("#personnel-profile").load("pages/personnels/" + index + ".html")
+        $("#personnel-profile").fadeToggle(300);
     }
 </script>
+
 </html>
